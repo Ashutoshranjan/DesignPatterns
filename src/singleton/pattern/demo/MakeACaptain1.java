@@ -1,15 +1,15 @@
 package singleton.pattern.demo;
 
-public class MakeACaptain {
-private static MakeACaptain _captain;
+public class MakeACaptain1 {
+private static MakeACaptain1 _captain;
 
-	private MakeACaptain() {
+	private MakeACaptain1() {
 	}
 	
-public static MakeACaptain getCaptain() {
-	//Lazy initialization and not thread safe.
+public static synchronized MakeACaptain1 getCaptain() {
+	//Lazy initialization and thread safe.
 			if(_captain == null) {
-				_captain = new MakeACaptain();
+				_captain = new MakeACaptain1();
 				System.out.println("New Captain selected for our team");
 			}
 			else
